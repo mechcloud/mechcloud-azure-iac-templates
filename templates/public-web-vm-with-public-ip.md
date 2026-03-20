@@ -190,6 +190,16 @@ resources:
             destination_port_range: "22"
             source_address_prefix: "{{CURRENT_IP}}/32"
             destination_address_prefix: "*"
+        - name: allow-http-80
+          props:
+            priority: 110
+            direction: Inbound
+            access: Allow
+            protocol: Tcp
+            source_port_range: "*"
+            destination_port_range: "80"
+            source_address_prefix: "*"
+            destination_address_prefix: "*"
             
   - type: "Microsoft.Network/publicIPAddresses"
     api_version: "2025-05-01"
